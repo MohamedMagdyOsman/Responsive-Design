@@ -1,0 +1,180 @@
+.features {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+
+            &:hover .text button {
+                color: #fff;
+            }
+
+            &:hover .text button::before {
+                width: 100%;
+            }
+
+            .image {
+                height: 50%;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .text {
+                padding: 20px;
+                text-align: center;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 150px;
+                    background-color: #fff;
+                    top: -149px;
+                    left: 0px;
+                    clip-path: polygon(0 50%, 105% 0, 105% 100%, 0 100%);
+                    transition: 0.2s;
+                    transition-timing-function: linear;
+                }
+
+                h3 {
+                    font-size: 40px;
+                    margin-bottom: 50px;
+                    display: inline-block;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 75%;
+                        height: 5px;
+                        bottom: -20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                p {
+                    color: #8b8b8b;
+                    line-height: 1.8;
+                    font-size: 20px;
+                    margin-bottom: 50px;
+                }
+
+                button {
+                    background: none;
+                    padding: 10px 30px;
+                    border: 3px solid;
+                    border-radius: 5px;
+                    font-size: 23px;
+                    text-transform: capitalize;
+                    font-weight: bold;
+                    position: relative;
+                    transition: var(--main-transition);
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        transition: var(--main-transition);
+                    }
+                }
+            }
+
+            &:hover .text::before {
+                clip-path: polygon(0 50%, 0 0, 105% 100%, 0 100%);
+            }
+        }
+
+        .one {
+            .image {
+                &::before {
+                    background-color: rgba(244, 64, 54, 0.6);
+                }
+            }
+
+            .text {
+                h3::after {
+                    background-color: #f44036;
+                }
+
+                button {
+                    color: #f44036;
+                    border-color: #f44036;
+                }
+            }
+
+            &:hover .text button::before {
+                background-color: #f44036;
+            }
+        }
+
+        .two {
+            .image {
+                &::before {
+                    background-color: rgba(0, 150, 136, 0.6);
+                }
+            }
+
+            .text {
+                h3::after {
+                    background-color: #009688;
+                }
+
+                button {
+                    color: #009688;
+                    border-color: #009688;
+                }
+            }
+
+            &:hover .text button::before {
+                background-color: #009688;
+            }
+        }
+
+        .three {
+            .image {
+                &::before {
+                    background-color: rgba(3, 169, 244, 0.6);
+                }
+            }
+
+            .text {
+                h3::after {
+                    background-color: #03a9f4;
+                }
+
+                button {
+                    color: #03a9f4;
+                    border-color: #03a9f4;
+                }
+            }
+
+            &:hover .text button::before {
+                background-color: #03a9f4;
+            }
+        }
+    }
+}

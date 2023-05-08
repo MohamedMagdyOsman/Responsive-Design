@@ -1,0 +1,168 @@
+/* Start header */
+header {
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+
+        > a {
+            color: var(--main-color);
+            font-size: 25px;
+            font-weight: bold;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            > a {
+                height: 70px;
+                line-height: 35px;
+                display: inline-block;
+                padding: 20px 30px;
+                color: black;
+                font-size: 18px;
+                text-transform: capitalize;
+                position: relative;
+
+                &:hover {
+                    background-color: #ebebeb;
+                    color: var(--main-color);
+                }
+    
+                &:hover::before {
+                    content: "";
+                    position: absolute;
+                    height: 4px;
+                    width: 100%;
+                    background-color: var(--main-color);
+                    top: 0;
+                    left: 0;
+                    animation-duration: var(--main-transition);
+                    animation-name: leftToRight;
+                }
+    
+                &:hover + .menu {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
+            .menu {
+                position: absolute;
+                bottom: -355px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 20px;
+                z-index: 2;
+                border-bottom: 3px solid var(--main-color);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                transition: 0.2s;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+                .image {
+                    width: 50%;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                > ul {
+                    width: 25%;
+
+                    li {
+                        padding: 15px 0;
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid #ddd;
+                        }
+
+                        &:hover {
+                            background-color: #ddd;
+                        }
+
+                        a {
+                            color: var(--main-color);
+                            padding: 20px;
+                            font-weight: bold;
+                            font-size: 18px;
+
+                            i {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu:hover {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    header .container {
+        > a {
+            margin: 0 auto;
+            height: 50px;
+            width: 100%;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            a {
+                padding: 10px;
+                font-size: 15px;
+                height: 100%;
+            }
+
+            .menu {
+                bottom: -439px;
+                padding: 10px;
+
+                ul {
+                    width: 100%;
+
+                    li {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    header .container nav .menu {
+        bottom: -302px;
+
+        .image {
+            display: none;
+        }
+
+        ul {
+            width: 48%;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    header .container nav .menu {
+        bottom: -325px;
+    }
+}

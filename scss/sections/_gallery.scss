@@ -1,0 +1,45 @@
+/* Start gallery */
+.gallery {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--section-background);
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+
+        .card {
+            border: 15px solid #fff;
+            box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+            overflow: hidden;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                background-color: rgb(255, 255, 255, 20%);
+                z-index: 50;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:hover::before {
+                animation-duration: var(--main-transition);
+                animation-name: takeImage;
+            }
+
+            &:hover img {
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            img {
+                max-width: 100%;
+                transition: var(--main-transition);
+            }
+        }
+    }
+}
