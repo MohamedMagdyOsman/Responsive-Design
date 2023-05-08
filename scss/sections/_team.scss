@@ -1,0 +1,96 @@
+/* Start team */
+.team {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+
+        .box {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                background-color: #f3f3f3;
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                border-radius: 10px;
+                transition: var(--main-transition);
+            }
+
+            &::before {
+                width: calc(100% - 60px);
+                z-index: -2;
+            }
+
+            &::after {
+                z-index: -1;
+                background-color: #e4e4e4;
+                width: 0;
+            }
+
+            &:hover::after {
+                width: calc(100% - 60px);
+            }
+
+            .data {
+                display: flex;
+                align-items: center;
+                padding-top: 60px;
+                gap: 20px;
+
+                img {
+                    border-radius: 10px;
+                    width: calc(100% - 60px);
+                    transition: var(--main-transition);
+                }
+
+                .social {
+                    width: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+
+                    a {
+                        color: #777;
+                        font-size: 18px;
+
+                        &:hover {
+                            color: var(--main-color);
+                        }
+                    }
+                }
+            }
+
+            .text {
+                margin: 30px 0 20px 80px;
+
+                h3 {
+                    color: var(--main-color);
+                    text-transform: capitalize;
+                    margin-bottom: 10px;
+                    font-size: 22px;
+                    transition: var(--main-transition);
+                }
+
+                p {
+                    font-size: 18px;
+                    text-transform: capitalize;
+                }
+            }
+
+            &:hover .data img {
+                filter: grayscale(100%);
+            }
+
+            &:hover .text h3 {
+                color: #777;
+            }
+        }
+    }
+}

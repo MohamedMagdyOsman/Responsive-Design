@@ -1,0 +1,60 @@
+/* Start testimonials */
+.testimonials {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--section-background);
+    .container {
+        .rates {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px 40px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: 1s;
+
+            .rate {
+                background-color: #fff;
+                position: relative;
+                border-radius: 5px;
+                box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+                padding: 20px;
+
+                img {
+                    position: absolute;
+                    width: 90px;
+                    border-radius: 50%;
+                    top: -30px;
+                    right: -7px;
+                    border: 10px solid var(--section-background);
+                }
+
+                .text {
+                    h3, .stars {
+                        margin-bottom: 10px;
+                    }
+
+                    .stars {
+                        i {
+                            color: #ffc107;
+
+                            &:last-child {
+                                color: black;
+                            }
+                        }
+                    }
+
+                    span {
+                        margin-bottom: 10px;
+                        display: inline-block;
+                        color: #8d8d8d;
+                    }
+
+                    p {
+                        color: #8d8d8d;
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }
+    }
+}

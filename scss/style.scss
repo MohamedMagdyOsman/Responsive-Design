@@ -1,0 +1,29 @@
+// base
+@import './base/variables';
+@import './base/base';
+@import './layout/grid';
+
+// components
+@import './components/dots';
+@import './components/main-title';
+@import './components/scroll';
+
+// sections
+@import './sections/header';
+@import './sections/landing';
+@import './sections/articles';
+@import './sections/gallery';
+@import './sections/features';
+@import './sections/testimonials';
+@import './sections/team';
+@import './sections/services';
+@import './sections/skills';
+@import './sections/works';
+@import './sections/events';
+@import './sections/plans';
+@import './sections/stats';
+@import './sections/discount';
+@import './sections/footer';
+
+// animations
+@import './other/animations';
